@@ -1,0 +1,62 @@
+$breakpoints: (
+    lg: 1700px,
+    tab: 1000px,
+    mb: 750px,
+);
+
+
+@mixin break-point-down($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $ligher; 
+  color: $white; 
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $light;
+  margin: 0;
+}
+
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: $font-abhaya;
+  margin: 0;
+  padding: 0;
+  span {
+    font-family: $font-abhaya;
+  }
+}
+
+span {
+  font-family: $font-bebas;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
