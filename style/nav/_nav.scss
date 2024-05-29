@@ -73,6 +73,7 @@
     top: -10px;
     // transition: .2s;
     height: 40px;
+    color: $black;
     
     span {
       padding: 10px;
@@ -97,6 +98,22 @@
 body[data-page="about"] {
   .navigation {
     mix-blend-mode: difference;
+    &__list {
+      &--item, span {
+        color: $white;
+        .nav-link {
+          color: $white;
+        }
+      }
+    }
+    .nav-menu {
+      color: $white;
+    }
+  }
+}
+body[data-page="ofert"] {
+  .navigation {
+    mix-blend-mode: lighten;
     &__list {
       &--item, span {
         color: $white;

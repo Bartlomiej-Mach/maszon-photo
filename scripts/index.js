@@ -21,14 +21,19 @@ import { nav } from './nav/nav.js';
 import { home } from './home/home.js';
 import { about } from './about/about.js';
 import { footer } from './footer/footer.js';
+import { scroll } from './scroll/scrol.js';
+import { ofert } from './ofert/ofert.js';
  
 
 const navObj = new nav();
 const homeObj = new home();
 const aboutObj = new about();
 const footerObj = new footer();
+const scrollObj = new scroll();
+const ofertObj = new ofert();
 
 navObj.init();
+scrollObj.init();
 if(document.querySelector('body[data-page="index"]')) {
   homeObj.init();
 }
@@ -37,6 +42,9 @@ if(document.querySelector('body[data-page="about"]')) {
 }
 if(document.querySelector('.footer')) {
   footerObj.init();
+}
+if(document.querySelector('body[data-page="ofert"]')) {
+  ofertObj.init();
 }
 
 

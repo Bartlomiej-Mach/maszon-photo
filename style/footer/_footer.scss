@@ -33,11 +33,11 @@ body[data-page="about"] {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0);
       width: 60px;
       height: 60px;
       z-index: 100;
-      transform: scale(0);
+      transform-origin: center;
       .line {
         position: absolute;
         left: 50%;
@@ -116,6 +116,9 @@ body[data-page="about"] {
       padding: 90px 15px 15px 15px;
     }
     &__cover {
+      .center-x {
+        display: none;
+      }
       &__top {
         flex-direction: column;
         justify-content: flex-start;
