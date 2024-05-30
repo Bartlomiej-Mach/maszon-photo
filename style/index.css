@@ -558,6 +558,9 @@ body[data-page=ofert] .navigation .nav-menu {
     display: block;
   }
 }
+body[data-page=about] .home {
+  height: 100svh;
+}
 body[data-page=about] .home__cover {
   display: flex;
   justify-content: center;
