@@ -786,6 +786,7 @@ body[data-page=about] .content-two .content-two__cover--img-box-mobile .lvl .car
   width: 100%;
   padding: 8px;
   display: block;
+  margin: 0 5px;
 }
 body[data-page=about] .content-two .content-two__cover--img-box-mobile .lvl .card-box img {
   max-width: 151px;

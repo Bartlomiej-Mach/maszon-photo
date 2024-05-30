@@ -197,7 +197,9 @@ export class about {
       ease: "power4.out",
     });
 
-    this.paralaxAnimation('.home', 'video');
+    if(window.innerWidth > 750) {
+      this.paralaxAnimation('.home', 'video');
+    }
     this.paralaxAnimation('.content-three', '.content-three__bg-img');
     
     
