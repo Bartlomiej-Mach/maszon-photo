@@ -657,6 +657,7 @@ body[data-page=about] .home .video-container {
      -moz-user-select: none;
           user-select: none;
   pointer-events: none;
+  background-color: #F93A3A;
 }
 body[data-page=about] .home .video-container video {
   -o-object-fit: cover;

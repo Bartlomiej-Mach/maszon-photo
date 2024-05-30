@@ -17,7 +17,7 @@ export class about {
       animationIn: this.animationIn(this.homeH1),
       imgRandomizer: this.imgRandomizer(6, 1, 11),
       animationsOnScroll: this.animationsOnScroll(),
-      videoStart: this.videoStart(),
+      // videoStart: this.videoStart(),
     };
   }
 
