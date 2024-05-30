@@ -62,23 +62,31 @@ export class nav {
   };
 
   navLinkHover = () => {
-    // mouse in
-    this.navLinks.forEach((element) => {
-      element.addEventListener("mouseover", () => {
-        for (let i = 0; i < this.navLinks.length; i++) {
-          this.navLinks[i].classList.add("is-blurred");
-        }
-        element.classList.remove("is-blurred");
+    let innerWidth = window.innerWidth;
+    if(innerWidth > 750) {
+          // mouse in
+      this.navLinks.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+          for (let i = 0; i < this.navLinks.length; i++) {
+            this.navLinks[i].classList.add("is-blurred");
+          }
+          element.classList.remove("is-blurred");
+        });
       });
-    });
-    // mouse leave
-    this.navLinks.forEach((element) => {
-      element.addEventListener("mouseout", () => {
-        for (let i = 0; i < this.navLinks.length; i++) {
-          this.navLinks[i].classList.remove("is-blurred");
-        }
+      // mouse leave
+      this.navLinks.forEach((element) => {
+        element.addEventListener("mouseout", () => {
+          for (let i = 0; i < this.navLinks.length; i++) {
+            this.navLinks[i].classList.remove("is-blurred");
+          }
+        });
       });
-    });
+    } else {
+      this.navLinks.forEach((element) => {
+        element.removeEventListener('mouseout', {});
+        element.removeEventListener('mouseover', {});
+      })
+    }
   };
 
   mobileNav = () => {

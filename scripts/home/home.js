@@ -95,6 +95,7 @@ export class home {
         opacity: 1,
         duration: 0.2,
         stagger: 0.1,
+        pointerEvents: 'all',
       });
     }, 2700);
   };

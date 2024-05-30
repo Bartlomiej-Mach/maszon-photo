@@ -9,6 +9,7 @@ export class about {
     this.cardBoxContainer = document.querySelectorAll(
       ".content-two .content-two__cover--img-box .card-box"
     )
+    this.videoContainer = document.querySelector('.video-container video');
   };
   init() {
     return {
@@ -16,6 +17,7 @@ export class about {
       animationIn: this.animationIn(this.homeH1),
       imgRandomizer: this.imgRandomizer(6, 1, 11),
       animationsOnScroll: this.animationsOnScroll(),
+      videoStart: this.videoStart(),
     };
   }
 
@@ -85,6 +87,10 @@ export class about {
       );
     }, 2700);
   };
+
+  videoStart = () => {
+    if(this.videoContainer) this.videoContainer.play();
+  }
 
 
   animationsOnScroll = () => {

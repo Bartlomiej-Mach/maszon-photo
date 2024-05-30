@@ -187,6 +187,7 @@
       user-select: none;
       opacity: 0;
       transform: translateY(-40px);
+      pointer-events: none;
 
     
       &:hover img{

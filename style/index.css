@@ -242,6 +242,7 @@ a {
           user-select: none;
   opacity: 0;
   transform: translateY(-40px);
+  pointer-events: none;
 }
 .home .menu--item:hover img {
   filter: brightness(150%) contrast(80%);
