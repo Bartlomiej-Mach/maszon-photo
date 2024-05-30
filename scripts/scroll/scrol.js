@@ -16,7 +16,7 @@ export class scroll {
 
   disabledScrol = () => {
     
-    if(document.querySelector('body[data-page="ofert"]') || document.querySelector('body[data-page="index"]') ) {
+    if(document.querySelector('body[data-page="ofert"]') || document.querySelector('body[data-page="index"]') ||document.querySelector('body[data-page="contact"]')) {
       document.body.addEventListener('touchmove', (e)=> { e.preventDefault(); }, {passive:false});
     }
 

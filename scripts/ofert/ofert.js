@@ -12,6 +12,8 @@ export class ofert {
     this.linkButtons = document.querySelectorAll(
       'body[data-page="ofert"] .link-container a'
     );
+    this.prevBtn = document.querySelector('.home__cover--navi .prev');
+    this.nextBtn = document.querySelector('.home__cover--navi .next');
   };
   init() {
     return {
@@ -55,6 +57,36 @@ export class ofert {
         stagger: 0.1,
         duration: 0.2,
       });
+
+      gsap.fromTo(
+        "body[data-page='ofert'] .home__cover--navi .line",
+        { height: 0},
+        { height: 58}
+      );
+
+      gsap.to(
+        "body[data-page='ofert'] .home__cover--navi .prev span",
+        { x: 0}
+      );
+      gsap.to(
+        "body[data-page='ofert'] .home__cover--navi .next span",
+        { x: 0}
+      );
+      gsap.to(
+        "body[data-page='ofert'] .home__cover--navi .prev .arrow",
+        { x: 0}
+      );
+      gsap.to(
+        "body[data-page='ofert'] .home__cover--navi .next .arrow",
+        { x: 0}
+      );
+
+      gsap.fromTo(
+        "body[data-page='ofert'] .link-container a",
+        { y: -40, opacity: 0, duration: 1.4, rotate: -20, stagger: .2 },
+        { opacity: 1, x: 0, y: 0, stagger: .2, rotate: 0 }
+      );
+
     }, 2700);
   };
 
@@ -69,6 +101,7 @@ export class ofert {
         gsap.set(img, { scale: 2, top: "4em" });
       }
     });
+
     const showSlide = (index) => {
       if (isAnimating) return;
       isAnimating = true;
@@ -94,15 +127,27 @@ export class ofert {
 
 
       // main letters animation
-      gsap.to(listOfElements[0], { x: -25, y: -25, ease: 'power3.inOut' });
-      gsap.to(listOfElements[1], { x: 25, y: -25, ease: 'power3.inOut' });
-      gsap.fromTo(listOfElements[2], { x: "-50%", y: 0, ease: 'power3.inOut'}, { x: "-50%", y: 25, ease: 'power3.inOut' });
-      gsap.to(listOfElements[3], { x: 25, y: 25, ease: 'power3.inOut' });
-
-      gsap.to(listOfElements[0], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
-      gsap.to(listOfElements[1], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
-      gsap.fromTo(listOfElements[2], { x: "-50%", y: 25 }, { x: "-50%", y: 0, ease: 'power3.inOut', delay: 1.2});
-      gsap.to(listOfElements[3], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+      if(window.innerWidth > 750) {
+        gsap.to(listOfElements[0], { x: -25, y: -25, ease: 'power3.inOut' });
+        gsap.to(listOfElements[1], { x: 25, y: -25, ease: 'power3.inOut' });
+        gsap.fromTo(listOfElements[2], { x: "-50%", y: 0, ease: 'power3.inOut'}, { x: "-50%", y: 25, ease: 'power3.inOut' });
+        gsap.to(listOfElements[3], { x: 25, y: 25, ease: 'power3.inOut' });
+  
+        gsap.to(listOfElements[0], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.to(listOfElements[1], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.fromTo(listOfElements[2], { x: "-50%", y: 25 }, { x: "-50%", y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.to(listOfElements[3], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+      } else {
+        gsap.to(listOfElements[0], { x: 15, y: 15, ease: 'power3.inOut' });
+        gsap.to(listOfElements[1], { x: -15, y: 15, ease: 'power3.inOut' });
+        gsap.fromTo(listOfElements[2], { x: "-50%", y: 0, ease: 'power3.inOut'}, { x: "-50%", y: -15, ease: 'power3.inOut' });
+        gsap.to(listOfElements[3], { x: -15, y: -15, ease: 'power3.inOut' });
+  
+        gsap.to(listOfElements[0], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.to(listOfElements[1], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.fromTo(listOfElements[2], { x: "-50%", y: -15 }, { x: "-50%", y: 0, ease: 'power3.inOut', delay: 1.2});
+        gsap.to(listOfElements[3], { x: 0, y: 0, ease: 'power3.inOut', delay: 1.2});
+      }
 
       // animation buttons 
       gsap.to(this.linkButtons, {scale: 0.8});
@@ -199,25 +244,66 @@ export class ofert {
       if (isAnimating) return;
       if (e.deltaY > 0 && currentSlideIndex < this.slides.length - 1) {
         showSlide(currentSlideIndex + 1);
-
-        // gsap.to(this.slideName[currentSlideIndex], {
-        //   opacity: 0,
-        // });
-        // gsap.to(this.slideName[currentSlideIndex + 1], {
-        //   opacity: 1,
-        // });
         currentSlideIndex++;
+
+        if(currentSlideIndex == 3) {
+          this.nextBtn.classList.add('disabled-btn')
+        }
+        if(currentSlideIndex > 0) {
+          this.prevBtn.classList.remove('disabled-btn')
+        }
+
       } else if (e.deltaY < 0 && currentSlideIndex > 0) {
         hideSlide(currentSlideIndex);
-        // gsap.to(this.slideName[currentSlideIndex], {
-        //   opacity: 0,
-        // });
-        // gsap.to(this.slideName[currentSlideIndex - 1], {
-        //   opacity: 1,
-        // });
         currentSlideIndex--;
+
+        if(currentSlideIndex == 0) {
+          this.prevBtn.classList.add('disabled-btn')
+        }
+  
+        if(currentSlideIndex < 3 && currentSlideIndex !== 0) {
+          this.prevBtn.classList.remove('disabled-btn')
+          this.nextBtn.classList.remove('disabled-btn')
+        }
       }
     });
+
+    this.nextBtn.addEventListener('click', () => {
+      if (isAnimating) return;
+
+      if(currentSlideIndex < this.slides.length - 1) {
+        showSlide(currentSlideIndex + 1);
+        currentSlideIndex++;
+      }
+      
+      
+      if(currentSlideIndex == 3) {
+        this.nextBtn.classList.add('disabled-btn')
+      }
+      if(currentSlideIndex > 0) {
+        this.prevBtn.classList.remove('disabled-btn')
+      }
+
+    })
+
+    this.prevBtn.addEventListener('click', () => {
+      if (isAnimating) return;
+      if(currentSlideIndex > 0) {
+        hideSlide(currentSlideIndex);
+        currentSlideIndex--;
+      }
+
+      if(currentSlideIndex == 0) {
+        this.prevBtn.classList.add('disabled-btn')
+      }
+
+      if(currentSlideIndex < 3 && currentSlideIndex !== 0) {
+        this.prevBtn.classList.remove('disabled-btn')
+        this.nextBtn.classList.remove('disabled-btn')
+      }
+
+    })
+
   };
 
 
