@@ -7,7 +7,7 @@ export class home {
     return {
       domElements: this.domElements(),
       animationIn: this.animationIn(this.homeH1),
-      imgSlider: this.imgSlider(),
+      imgFetch: this.imgFetch(),
       mouseMove: this.mouseMove(),
     };
   }
@@ -95,24 +95,33 @@ export class home {
         opacity: 1,
         duration: 0.2,
         stagger: 0.1,
-        pointerEvents: 'all',
+        pointerEvents: "all",
       });
     }, 2700);
   };
 
-  imgSlider = () => {
+  imgFetch = () => {
     const menuWrapper = document.querySelector(".menu--wrapper");
-    const imgCount = 10;
+    fetch('../../data/image.json')
+    .then((response) => response.json())
+    .then((json) => {
 
-    for (let i = 1; i < imgCount; i++) {
-      menuWrapper.innerHTML += `
-      <a href="./portfolio.html?portfolio=${i}" class="menu--item" draggable="false">
-        <div class="img-container">
-          <img src="./image/home-small-img/${i}.jpg" alt="slider-img" />
-        </div>
-      </a>
-      `;
-    }
+      for (let i = 0; i < json.image.length; i++) {
+        menuWrapper.innerHTML += `
+        <a href="./portfolio.html?portfolio=${i + 1}&orientation=${json.image[i].orientation}" class="menu--item" draggable="false">
+          <div class="img-container">
+            <img src="./image/home-small-img/${i + 1}.jpg" alt="slider-img" />
+          </div>
+        </a>
+        `;
+
+        this.imgSlider();
+
+      }
+    });
+  }
+
+  imgSlider = () => {
 
     /*--------------------
     Vars

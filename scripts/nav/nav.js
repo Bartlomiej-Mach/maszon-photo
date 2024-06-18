@@ -37,8 +37,14 @@ export class nav {
         this.body.getAttribute("data-page") ===
         this.navLinks[i].getAttribute("data-page")
       ) {
-        this.navLinks[i].classList.add("nav-link-active");
-        this.footerLinks[i]?.classList.add("nav-link-active");
+        if(this.body.getAttribute('data-page') === 'portfolio') {
+          this.navLinks.forEach(element => {
+            element.classList.remove("nav-link-active");
+          });
+        } else {
+          this.navLinks[i].classList.add("nav-link-active");
+          this.footerLinks[i]?.classList.add("nav-link-active");
+        }
       }
     }
   };

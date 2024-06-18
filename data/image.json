@@ -1,0 +1,45 @@
+{
+  "image": [
+    {
+      "id": 1,
+      "orientation": "vertical"
+    },
+    {
+      "id": 2,
+      "orientation": "vertical"
+    },
+    {
+      "id": 3,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 4,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 5,
+      "orientation": "vertical"
+    },
+    {
+      "id": 6,
+      "orientation": "vertical"
+    },
+    {
+      "id": 7,
+      "orientation": "vertical"
+    },
+    {
+      "id": 8,
+      "orientation": "vertical"
+    },
+    {
+      "id": 9,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 10,
+      "orientation": "horizontal"
+    }
+    
+  ]
+}
