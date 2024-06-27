@@ -41,8 +41,8 @@ export class portfolio {
       this.loadImages(orientationPortfolio[1], imageId[1]);
       this.nextPortfolio(imageId[1]);
     }
-
   };
+
 
   animationIn = () => {
     // first step
@@ -69,11 +69,22 @@ export class portfolio {
       imgCounter = 7;
     }
 
-    for (let i = 0; i < imgCounter; i++) {
-      if(orientation == 'horizontal') {
-        this.horizontalImgContainer[i].src = `./image/portfolio/${portfolioId}/${i + 1}.png`;
-      } else {
-        this.verticalImgContainer[i].src = `./image/portfolio/${portfolioId}/${i + 1}.png`;
+    let innerWidth = window.innerWidth;
+    if(innerWidth <= 750) {
+      for (let i = 0; i < imgCounter; i++) {
+        if(orientation == 'horizontal') {
+          this.horizontalImgContainer[i].src = `./image/portfolio/${portfolioId}/mobile/${i + 1}.webp`;
+        } else {
+          this.verticalImgContainer[i].src = `./image/portfolio/${portfolioId}/mobile/${i + 1}.webp`;
+        }
+      }
+    } else {
+      for (let i = 0; i < imgCounter; i++) {
+        if(orientation == 'horizontal') {
+          this.horizontalImgContainer[i].src = `./image/portfolio/${portfolioId}/${i + 1}.png`;
+        } else {
+          this.verticalImgContainer[i].src = `./image/portfolio/${portfolioId}/${i + 1}.png`;
+        }
       }
     }
   }
