@@ -48,7 +48,7 @@ export class portfolio {
   animationIn = () => {
     // first step
     gsap.from('.portfolio', {
-      y: '-120%', ease: "power3.out", duration: 2, delay: 0.5
+      y: '-120%', ease: "power3.out", opacity: 0, duration: 2, delay: 0.5
     }) 
 
     // second step
