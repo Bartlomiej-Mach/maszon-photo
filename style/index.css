@@ -1331,6 +1331,7 @@ body[data-page=ofert] .home__bg-slider--slide .mobile {
 }
 body[data-page=portfolio] .portfolio {
   margin: 150px 0 0 0;
+  min-height: 100dvh;
 }
 body[data-page=portfolio] .portfolio .image {
   width: 100%;
