@@ -1128,6 +1128,7 @@ body[data-page=ofert] .home__cover--navi {
   justify-content: center;
 }
 body[data-page=ofert] .home__cover--navi .prev, body[data-page=ofert] .home__cover--navi .next {
+  cursor: pointer;
   overflow: hidden;
 }
 body[data-page=ofert] .home__cover--navi .prev .arrow, body[data-page=ofert] .home__cover--navi .next .arrow {

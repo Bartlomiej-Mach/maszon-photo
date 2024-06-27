@@ -30,6 +30,7 @@ body[data-page="ofert"] {
         align-items: center;
         justify-content: center;
         .prev, .next {
+          cursor: pointer;
           overflow: hidden;
           .arrow {
             display: none;
