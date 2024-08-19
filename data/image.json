@@ -39,6 +39,22 @@
     {
       "id": 10,
       "orientation": "horizontal"
+    },
+    {
+      "id": 11,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 12,
+      "orientation": "vertical"
+    },
+    {
+      "id": 13,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 14,
+      "orientation": "vertical"
     }
     
   ]

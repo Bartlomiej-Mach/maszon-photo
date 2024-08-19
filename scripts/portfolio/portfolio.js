@@ -5,6 +5,9 @@ export class portfolio {
     this.verticalImgContainer = document.querySelectorAll('.portfolio .vertical .image');
     this.nextPortfolioLink = document.querySelector('body[data-page="portfolio"] .next-portfolio-link');
     this.nextPortfolioImg = document.querySelector('body[data-page="portfolio"] .next-portfolio-link img');
+
+    // change number if You add more imgs
+    this.imgNumber = 14;
   };
 
   init() {
@@ -47,8 +50,10 @@ export class portfolio {
 
   animationIn = () => {
     // first step
-    gsap.from('.portfolio', {
+    gsap.fromTo('.portfolio', {
       y: '-120%', ease: "power3.out", opacity: 0, duration: 2, delay: 0.5
+    }, {
+      y: '0', ease: "power3.out", opacity: 1, duration: 2, delay: 0.5
     }) 
 
     // second step
@@ -119,7 +124,7 @@ export class portfolio {
     fetch('../../data/image.json')
     .then((response) => response.json())
     .then((json) => {
-      if(currentId == 10) {
+      if(currentId == this.imgNumber) {
         this.nextPortfolioLink.href = `./portfolio.html?portfolio=1&orientation=${json.image[0].orientation}`
         this.nextPortfolioImg.src = '../../image/portfolio/1/1.png';
       } else {

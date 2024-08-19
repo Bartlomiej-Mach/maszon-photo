@@ -248,7 +248,6 @@ a {
   filter: brightness(150%) contrast(80%);
 }
 .home .menu--item .img-container {
-  background-color: #43423d;
   display: block;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1333,6 +1332,7 @@ body[data-page=ofert] .home__bg-slider--slide .mobile {
 body[data-page=portfolio] .portfolio {
   margin: 150px 0 0 0;
   min-height: 100dvh;
+  opacity: 0;
 }
 body[data-page=portfolio] .portfolio .image {
   width: 100%;
