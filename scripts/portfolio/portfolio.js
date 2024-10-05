@@ -7,7 +7,7 @@ export class portfolio {
     this.nextPortfolioImg = document.querySelector('body[data-page="portfolio"] .next-portfolio-link img');
 
     // change number if You add more imgs
-    this.imgNumber = 14;
+    this.imgNumber = 17;
   };
 
   init() {

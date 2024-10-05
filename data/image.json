@@ -55,6 +55,18 @@
     {
       "id": 14,
       "orientation": "vertical"
+    },
+    {
+      "id": 15,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 16,
+      "orientation": "horizontal"
+    },
+    {
+      "id": 17,
+      "orientation": "horizontal"
     }
     
   ]
